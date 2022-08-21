@@ -27,24 +27,21 @@ This example cannot be modified or mutated:
     cart: {},
     user: {}
 }
-
 ```
 
 > 2. In functional programming we do not mutate state.
 
 ```
-    store.currentUser = {name : "Ketan"}  // This is invalid as the store is an immutable object.
-
+store.currentUser = {name : "Ketan"}  // This is invalid as the store is an immutable object.
 ```
 
 > 3. So to update it we should create a function that takes the store as an argument and returns the updated store.
 
 ```
-    function reducer(store, action) {
-        const upate = {...store}  // spread operator to create a copy of the store.
-
-    }
-
+function reducer(store, action) {
+    const update = {...store}  // spread operator to create a copy of the store.
+    update.item = "???"
+}
 ```
 
 To update a particular of object we need another building block or parameter called "action". It is just a plain javascript object that describes what just happens. Example: User logged In | Added Item to the shopping cart and more. Based on the type of action the reducer will know what properties of the state to update.
@@ -53,9 +50,30 @@ To update a particular of object we need another building block or parameter cal
 
 1. Store
 
-- Single Javascript object which includes the application state.
+   - Single Javascript object which includes the application state.
 
 2. Action
    - Plain Javascript objects that represents what happens with the state. Can be called as Events.
 3. Reducer
    - For updating the store. Can be called as Event Handlers | Processors. Reducers are pure functions which does not mutate the arguments and have no side effects. They just get the current store instance and return the updated instance.
+
+### Steps for building Redux Applications.
+
+- Design the store. List of Products and list of properties.
+- Define the action. Add | Delete | Update | Create
+- Create a reducer.
+- Setup the store.
+
+## Action in Redux
+
+> Example:
+
+```
+{
+    type: "ADD_ITEM",
+    payload: {
+        id:1,
+        description: "..."
+    }
+}
+```
