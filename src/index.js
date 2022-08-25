@@ -1,4 +1,5 @@
 import store from './store'
+import * as actions from './actionTypes'
 
 //Subscribe to the store.
 const unsubscribe = store.subscribe(() => {
@@ -7,7 +8,7 @@ const unsubscribe = store.subscribe(() => {
 
 // Dispatch an action for adding the Bug
 store.dispatch({
-  type: 'bugAdded',
+  type: actions.BUG_ADDED,
   payload: {
     description: 'Bug1',
   },
