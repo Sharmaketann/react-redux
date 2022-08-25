@@ -1,9 +1,11 @@
 import store from './store'
-import { bugAdded } from './actions'
+import { bugAdded, bugResolved } from './actions'
 
 // After using Reusable actions.
 
 store.dispatch(bugAdded('Bug 1'))
+
+store.dispatch(bugResolved(1))
 
 console.log(store.getState())
 
