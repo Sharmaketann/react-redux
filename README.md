@@ -77,3 +77,29 @@ To update a particular of object we need another building block or parameter cal
     }
 }
 ```
+
+### Debugging Redux Apps
+
+Install [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en).
+
+> Install npm package for Redux DevTools
+
+```
+npm i redux-devtools-extension
+```
+
+> Make sure you add this code in the file.
+
+```
+import { devToolsEnhancer } from 'redux-devtools-extension'
+import reducer from './reducer'
+
+const store = createStore(reducer, devToolsEnhancer({ trace: true }))
+
+```
+
+### Tracing code in Vscode rather in Google Debugger
+
+> In chrome extension setting click the extension option:
+> Set the option from Use Brower to your favorite code editor i.e: vscode.
+> Provide the path of the file where your project is located, so when you trace while debugging it opens in VsCode rather in the Browser Debugger.
