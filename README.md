@@ -103,3 +103,23 @@ const store = createStore(reducer, devToolsEnhancer({ trace: true }))
 > In chrome extension setting click the extension option:
 > Set the option from Use Brower to your favorite code editor i.e: vscode.
 > Provide the path of the file where your project is located, so when you trace while debugging it opens in VsCode rather in the Browser Debugger.
+
+> Redux Toolkit
+
+```
+createAction()
+
+A utility function to create an action creator for the given action type string. The action creator accepts a single argument, which will be included in the action object as a field called payload. The action creator function will also have its toString() overriden so that it returns the action type, allowing it to be used in reducer logic that is looking for that action type.
+
+createReducer()
+
+A utility function that allows defining a reducer as a mapping from action type to case reducer functions that handle these action types. The reducer's initial state is passed as the first argument.
+
+createSlice()
+
+A function that accepts an initial state, an object full of reducer functions, and a "slice name", and automatically generates action creators and action types that correspond to the reducers and state.
+
+The reducer argument is passed to createReducer().
+
+
+```
